@@ -1,0 +1,24 @@
+.title Footed_Dynamic_NAND
+.include techfile130.txt
+
+vdd vdd 0 1.2
+vclk clk 0 PULSE(0 1.2 2NS 2NS 2NS 50NS 100NS)
+vA A 0 1.2 PULSE(0 1.2 10NS 2NS 2NS 50NS 100NS)
+vB B 0 1.2 PULSE(0 1.2 30NS 2NS 2NS 50NS 100NS)
+vC C 0 1.2 PULSE(0 1.2 40NS 2NS 2NS 50NS 100NS)
+
+Mp vout clk vdd vdd pmos l=120n w=360n 
+Mn1 vout A 3 0 nmos l=120n w=480n
+Mn2 3 B 2 0 nmos l=120n w=480n
+Mn3 2 C 1 0 nmos l=120n w=480n
+Mn4 1 clk 0 0 nmos l=120n w=480n
+Cload vout 0 200f
+
+.tran 0.1n 200n 0 0.1n
+
+.control
+run 
+plot v(A) v(B) v(C) 
+plot v(clk) v(vout)
+.endc
+.end

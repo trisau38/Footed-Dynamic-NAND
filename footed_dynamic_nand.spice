@@ -1,0 +1,21 @@
+* SPICE3 file created from footed_dynamic_nand.ext - technology: scmos
+
+.option scale=1u
+
+M1000 out A a_24_n49# Gnd nfet w=32 l=2
++  ad=256 pd=80 as=320 ps=84
+M1001 a_12_n49# C a_0_n49# Gnd nfet w=32 l=2
++  ad=320 pd=84 as=320 ps=84
+M1002 a_0_n49# clk GND Gnd nfet w=32 l=2
++  ad=0 pd=0 as=224 ps=78
+M1003 out clk VDD VDD pfet w=24 l=2
++  ad=192 pd=64 as=168 ps=62
+M1004 a_24_n49# B a_12_n49# Gnd nfet w=32 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 GND Gnd 14.85fF
+C1 A Gnd 4.05fF
+C2 B Gnd 4.05fF
+C3 C Gnd 4.05fF
+C4 out Gnd 10.34fF
+C5 clk Gnd 4.60fF
+C6 VDD Gnd 14.10fF
